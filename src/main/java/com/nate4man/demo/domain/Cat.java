@@ -1,13 +1,20 @@
-package com.demo.domain;
+package com.nate4man.demo.domain;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 import com.google.common.collect.Lists;
 
+@Entity
 public class Cat {
 
+	@Id
     private String name;
-    private String color;
+	private String color;
+    @OneToMany
     private List<SpecialPower> specialPowers;
     
     public Cat() {

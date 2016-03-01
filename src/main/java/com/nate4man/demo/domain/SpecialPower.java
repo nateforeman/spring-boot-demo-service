@@ -1,7 +1,19 @@
-package com.demo.domain;
+package com.nate4man.demo.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class SpecialPower {
+	@Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
 	private String description;
+	@Enumerated(EnumType.STRING)
 	private Rate rate;
 	
 	public SpecialPower() {
